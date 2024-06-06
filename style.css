@@ -1,3 +1,26 @@
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-</style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+:root{
+    --branco: white;
+    --cor-de-fundo: #00162E;
+    --fundo-senha: #00244D;
+    --fundo-texto: #001E40;
+    --borda: #0075FF;
+    --roboto-slab: 'Roboto slab', sans-serif;
+    --roboto-slab: 'Roboto slab', monospace;
+}
+
+body{
+    color: var(--branco);
+    background-color: var(--roboto-slab);
+    font-family: var(--roboto-slab);
+}
+
+.titulo-principal{
+    font-family: var(--roboto-slab);
+    font-size: 32px;
+}
+
+.titulo-secundario{
+    font-size: 24px;
+}
