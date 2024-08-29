@@ -1,12 +1,12 @@
-const numeroSenha = document.querySelector('parametro-senha__texto')
+const numeroSenha = document.querySelector('.parametro-senha__texto');
 let tamanhoSenha = 12;
 numeroSenha.textContent = tamanhoSenha;
-const letrasMaiuculas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-const letrasMinusculas = 'abcdefghijklmnopqrstuvwxyz';
+const letrasMaiusculas = 'ABCDEFGHIJKLMNOPQRSTUVXYWZ';
+const letrasMinusculas = 'abcdefghijklmnopqrstuvxywz';
 const numeros = '0123456789';
 const simbolos = '!@%*?';
 const botoes = document.querySelectorAll('.parametro-senha__botao');
-const campoSenha  = document.querySelector('#campo-senha')
+const campoSenha = document.querySelector('#campo-senha');
 const checkbox = document.querySelectorAll('.checkbox');
 const forcaSenha = document.querySelector('.forca');
 
@@ -22,7 +22,7 @@ function diminuiTamanho() {
     geraSenha();
 }
 function aumentaTamanho() {
-    if (tamanhoSenha < 20){
+    if (tamanhoSenha < 20) {
         // tamanhoSenha = tamanhoSenha+1;
         tamanhoSenha++;
     }
@@ -47,7 +47,7 @@ function geraSenha() {
     if (checkbox[2].checked) {
         alfabeto = alfabeto + numeros;
     }
-    if (checkbox[3] checked) {
+    if (checkbox[3].checked) {
         alfabeto = alfabeto + simbolos;
     }
     let senha = '';
@@ -62,12 +62,12 @@ function geraSenha() {
 }
 
 function classificaSenha(tamanhoAlfabeto){
-    let entropia = tamanhoSenha * Math.log2(tamanhoSenha);
+    let entropia = tamanhoSenha * Math.log2(tamanhoAlfabeto);
     console.log(entropia);
     forcaSenha.classList.remove('fraca','media','forte');
     if (entropia > 57){
         forcaSenha.classList.add('forte');
-    } else if (entropia > 35 && < 57 ) {
+    } else if (entropia > 35 && entropia < 57 ) {
         forcaSenha.classList.add('media');
     } else if (entropia <= 35){
         forcaSenha.classList.add('fraca');
